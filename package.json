@@ -1,5 +1,5 @@
 {
-  "name": "static-site",
+  "name": "package.json",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,5 +10,14 @@
   "license": "ISC",
   "dependencies": {
     "inquirer": "^6.3.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apalmer37/Professional_README_Generator_AP.git"
+  },
+  "bugs": {
+    "url": "https://github.com/apalmer37/Professional_README_Generator_AP/issues"
+  },
+  "homepage": "https://github.com/apalmer37/Professional_README_Generator_AP#readme"
 }

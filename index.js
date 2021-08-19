@@ -1,21 +1,24 @@
-// TODO: Include packages needed for this application
-const fileGenerator = require("./util/fileGenerator");
-const fs = require("fs");
 const inquirer = require('inquirer');
+const fs = require('fs');
+const util = require('util');
+const fileGenerator = require('./util/fileGenerator');
 
-// TODO: Create an array of questions for user input
-let questions = [
+// create writeFile function using promises instead of a callback function
+const writeFileAsync = util.promisify(fs.writeFile);
+
+const promptUser = () => {
+  return inquirer.prompt([
     {
         type: "input",
-        message: "What is your title?",
+        message: "What is your project's title?",
         name: "title"
     }, {
         type: "input",
-        message: "Give a brief description.",
+        message: "Give a brief description of your project.",
         name: "description"
     }, {
         type: "input",
-        message: "What is the installation process?",
+        message: "What is the installation process for your project?",
         name: "install"
     }, {
         type: "input",
@@ -35,19 +38,18 @@ let questions = [
         message: "Who are the contributors?",
         name: "contributors"
     }, {
+        // what am I supposed to do for tests?
         type: "input",
         message: "Are there any tests, and how are they run?",
         name: "tests"
-    }
-];
+    },
+])};
 
+const init = () => {
+    promptUser()
+        .then((answers) => writeFileAsync('./README.md', fileGenerator(answers)))
+        .then(() => console.log('Successfully wrote to README.md'))
+        .catch((err) => console.error(err));
+};
 
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
 init();
