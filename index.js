@@ -6,6 +6,7 @@ const fileGenerator = require('./util/fileGenerator');
 // create writeFile function using promises instead of a callback function
 const writeFileAsync = util.promisify(fs.writeFile);
 
+// create user prompts
 const promptUser = () => {
   return inquirer.prompt([
     {
@@ -25,6 +26,7 @@ const promptUser = () => {
         message: "What is your usage?",
         name: "usage"
     }, {
+        // not quite sure what licenses 
         type: "list",
         message: "Select your license for this project.",
         name: "license",
@@ -42,6 +44,10 @@ const promptUser = () => {
         type: "input",
         message: "Are there any tests, and how are they run?",
         name: "tests"
+    }, {
+        type: "input",
+        message: "Enter Github URL",
+        name: "github"
     },
 ])};
 
