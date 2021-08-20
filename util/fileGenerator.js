@@ -1,13 +1,13 @@
 function fileGenerator(answers){
-    return `# ${answers.title}
+    return ` ${answers.title}
     ## Description
     ${answers.description}
 
     ## Table of Contents:
-    1. [Installation](install)
-    2. [Usage](usage)
+    1. [Installation]#(install)
+    2. [Usage]'#(usage)'
     3. [Licenses](license)
-    4. [Contributors](contributors)
+    4. [Contributors](${answers.contributors})
     5. [Tests](tests)
     6. Questions(github)
 
@@ -32,11 +32,13 @@ function fileGenerator(answers){
     ${answers.tests}
 
 
-    ## Questions? Check out my Github!
-    [<a href="${answers.github}" target="${answers.github}">${answers.github}</a>]
+    ## Questions? Check out my Github! 
+    ./${answers.github}
+    
     `
 }
 
 module.exports = fileGenerator;
 
-// I ran npm i markdown, and it caused a ton of unintended changes
+// need to figure out how to make github a link and table of contents
+

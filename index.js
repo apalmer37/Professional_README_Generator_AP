@@ -26,7 +26,9 @@ const promptUser = () => {
         message: "What is your usage?",
         name: "usage"
     }, {
-        // not quite sure what licenses 
+        // add licenses and --> 
+        //WHEN I choose a license for my application from a list of options
+        //THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under 
         type: "list",
         message: "Select your license for this project.",
         name: "license",
@@ -45,6 +47,7 @@ const promptUser = () => {
         message: "Are there any tests, and how are they run?",
         name: "tests"
     }, {
+        // can't figure out how to make this a link
         type: "input",
         message: "Enter Github URL",
         name: "github"
@@ -53,7 +56,7 @@ const promptUser = () => {
 
 const init = () => {
     promptUser()
-        .then((answers) => writeFileAsync('./README.md', fileGenerator(answers)))
+        .then((answers) => writeFileAsync('README.md', fileGenerator({ ...answers })))
         .then(() => console.log('Successfully wrote to README.md'))
         .catch((err) => console.error(err));
 };
