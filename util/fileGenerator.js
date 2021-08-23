@@ -1,39 +1,44 @@
 function fileGenerator(answers){
     return ` ${answers.title}
+    
     ## Description
     ${answers.description}
 
     ## Table of Contents:
-    1. [Installation]#(install)
-    2. [Usage]'#(usage)'
-    3. [Licenses](license)
-    4. [Contributors](${answers.contributors})
-    5. [Tests](tests)
-    6. Questions(github)
+    1. Installation
+    2. Usage
+    3. Licenses
+    4. Contributors
+    5. Tests
+    6. Questions
 
 
-    ## Installation Instructions:
+    1. Installation Instructions:
     ${answers.install}
 
 
-    ## Usage:
+    2. Usage:
     ${answers.usage}
 
 
-    ## Licenses:
+    3. Licenses:
     ${answers.license}
 
 
-    ## Contributors:
+    4. Contributors:
     ${answers.contributors}
 
 
-    ## Tests:
+    5. Tests:
     ${answers.tests}
 
 
-    ## Questions? Check out my Github! 
-    ./${answers.github}
+    6. Questions? Contact me by email! 
+    ${answers.email}
+
+
+    7. My Github:
+    ${answers.github}
     
     `
 }

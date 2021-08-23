@@ -49,8 +49,14 @@ const promptUser = () => {
     }, {
         // can't figure out how to make this a link
         type: "input",
-        message: "Enter Github URL",
+        value: 'https://github.com/',
+        message: "Enter Github Username",
         name: "github"
+    },{
+        // can't figure out how to make this a link
+        type: "input",
+        message: "Enter Email Address",
+        name: "email"
     },
 ])};
 
