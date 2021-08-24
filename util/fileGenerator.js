@@ -38,7 +38,7 @@ function fileGenerator(answers){
 
 
     7. My Github:
-    ${answers.github}
+    [${answers.github}](https://github.com/${answers.github})
     
     `
 }

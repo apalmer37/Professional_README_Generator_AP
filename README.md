@@ -1,7 +1,7 @@
- asdfg
+ Professional README.md Generator
     
     ## Description
-    adfg
+    Generating a professional README.md generator using Node.js and Inquirer
 
     ## Table of Contents:
     1. Installation
@@ -13,23 +13,23 @@
 
 
     1. Installation Instructions:
-    dasfg
+    npm i
 
 
     2. Usage:
-    h
+    Go to terminal -- to start type 'node index.js' -- answer README prompts -- upon completion a README.md will be generated
 
 
     3. Licenses:
-    UoR
+    MIT
 
 
     4. Contributors:
-    d
+    Alex Palmer
 
 
     5. Tests:
-    f
+    no
 
 
     6. Questions? Contact me by email! 
@@ -37,6 +37,6 @@
 
 
     7. My Github:
-    apalmer37
+    [apalmer37](https://github.com/apalmer37)
     
     
