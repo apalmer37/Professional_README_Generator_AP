@@ -1,9 +1,9 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
-const fileGenerator = require('./util/fileGenerator');
+// const fileGenerator = require('./util/fileGenerator');
 
-// create writeFile function using promises instead of a callback function
+// create writeFile function using promises 
 const writeFileAsync = util.promisify(fs.writeFile);
 
 // create user prompts
@@ -26,9 +26,6 @@ const promptUser = () => {
         message: "What is your usage?",
         name: "usage"
     }, {
-        // add licenses and --> 
-        //WHEN I choose a license for my application from a list of options
-        //THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under 
         type: "list",
         message: "Select your license for this project.",
         name: "license",
@@ -42,26 +39,68 @@ const promptUser = () => {
         message: "Who are the contributors?",
         name: "contributors"
     }, {
-        // what am I supposed to do for tests?
         type: "input",
         message: "Are there any tests, and how are they run?",
         name: "tests"
     }, {
-        // can't figure out how to make this a link
         type: "input",
         message: "Enter Github Username",
         name: "github"
     },{
-        // can't figure out how to make this a link
         type: "input",
         message: "Enter Email Address",
         name: "email"
     },
 ])};
 
+function readmeGenerator(answers){
+    return ` ${answers.title}
+    
+    ## Description
+    ${answers.description}
+
+    ## Table of Contents:
+    1. Installation
+    2. Usage
+    3. Licenses
+    4. Contributors
+    5. Tests
+    6. Questions
+
+
+    1. Installation Instructions:
+    ${answers.install}
+
+
+    2. Usage:
+    ${answers.usage}
+
+
+    3. Licenses:
+    ${answers.license}
+
+
+    4. Contributors:
+    ${answers.contributors}
+
+
+    5. Tests:
+    ${answers.tests}
+
+
+    6. Questions? Contact me by email! 
+    ${answers.email}
+
+
+    7. My Github:
+    https://github.com/${answers.github}
+    
+    `;
+}
+
 const init = () => {
     promptUser()
-        .then((answers) => writeFileAsync('README.md', fileGenerator({ ...answers })))
+        .then((answers) => writeFileAsync('README.md', readmeGenerator({ ...answers })))
         .then(() => console.log('Successfully wrote to README.md'))
         .catch((err) => console.error(err));
 };

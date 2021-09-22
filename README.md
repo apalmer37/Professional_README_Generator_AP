@@ -1,7 +1,7 @@
- Professional README.md Generator
+ Pro
     
     ## Description
-    Generating a professional README.md generator using Node.js and Inquirer
+    creating readme
 
     ## Table of Contents:
     1. Installation
@@ -17,15 +17,15 @@
 
 
     2. Usage:
-    Go to terminal -- to start type 'node index.js' -- answer README prompts -- upon completion a README.md will be generated
+    node.js
 
 
     3. Licenses:
-    MIT
+    UoR
 
 
     4. Contributors:
-    Alex Palmer
+    alex
 
 
     5. Tests:
@@ -37,6 +37,6 @@
 
 
     7. My Github:
-    [apalmer37](https://github.com/apalmer37)
+    https://github.com/apalmer37
     
     
