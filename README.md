@@ -1,7 +1,7 @@
- Pro
+ Professional README.md Generator
     
     ## Description
-    creating readme
+    Creating a professional README.md generator with node.js
 
     ## Table of Contents:
     1. Installation
@@ -17,15 +17,15 @@
 
 
     2. Usage:
-    node.js
+    node.js, inquirer, fs, util
 
 
     3. Licenses:
-    UoR
+    MIT
 
 
     4. Contributors:
-    alex
+    Alex Palmer
 
 
     5. Tests:
